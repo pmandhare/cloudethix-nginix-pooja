@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pooja-app-deployment
+  labels:
+    app: pooja-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: pooja-app
+  template:
+    metadata:
+      labels:
+        app: pooja-app
+    spec:
+      containers:
+        - name: pooja-app-container
+          image: pmandhare / cloudethix-nginix-pooja
+          ports:
+            - containerPort: 80
